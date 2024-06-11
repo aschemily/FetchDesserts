@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = DessertsViewModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(vm.desserts, id: \.idMeal) { dessert in
+                    Text("\(dessert.strMeal)")
+                        .padding()
+                        .font(.headline)
+                    
+                    AsyncImage(url: URL(string: dessert.strMealThumb))
+                        
+                    
+                    //ThumbnailView(thumbnailURL: dessert.strMealThumb)
+                }
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(vm: DessertsViewModel())
 }
