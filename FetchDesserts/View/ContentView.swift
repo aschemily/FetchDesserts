@@ -18,9 +18,6 @@ struct ContentView: View {
                         .font(.headline)
                     
                     AsyncImage(url: URL(string: dessert.strMealThumb))
-                        
-                    
-                    //ThumbnailView(thumbnailURL: dessert.strMealThumb)
                 }
             }
         }

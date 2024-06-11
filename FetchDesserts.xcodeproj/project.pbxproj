@@ -15,6 +15,7 @@
 		32D908D92C18B60F002A1C6E /* DessertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D908D82C18B60F002A1C6E /* DessertsViewModel.swift */; };
 		32D908DB2C18B6EB002A1C6E /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D908DA2C18B6EB002A1C6E /* Dessert.swift */; };
 		32D908DF2C18C983002A1C6E /* DessertDetailsViewswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D908DE2C18C983002A1C6E /* DessertDetailsViewswift.swift */; };
+		32D908E12C18E625002A1C6E /* DessertAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D908E02C18E625002A1C6E /* DessertAPIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		32D908D82C18B60F002A1C6E /* DessertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsViewModel.swift; sourceTree = "<group>"; };
 		32D908DA2C18B6EB002A1C6E /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		32D908DE2C18C983002A1C6E /* DessertDetailsViewswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsViewswift.swift; sourceTree = "<group>"; };
+		32D908E02C18E625002A1C6E /* DessertAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertAPIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				32D908DA2C18B6EB002A1C6E /* Dessert.swift */,
+				32D908E02C18E625002A1C6E /* DessertAPIError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				32D908DB2C18B6EB002A1C6E /* Dessert.swift in Sources */,
 				32D908D72C18B59A002A1C6E /* DessertDataService.swift in Sources */,
 				32D908DF2C18C983002A1C6E /* DessertDetailsViewswift.swift in Sources */,
+				32D908E12C18E625002A1C6E /* DessertAPIError.swift in Sources */,
 				32D908C62C18B192002A1C6E /* ContentView.swift in Sources */,
 				32D908C42C18B192002A1C6E /* FetchDessertsApp.swift in Sources */,
 				32D908D92C18B60F002A1C6E /* DessertsViewModel.swift in Sources */,
