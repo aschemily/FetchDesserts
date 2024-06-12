@@ -13,12 +13,25 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(vm.desserts, id: \.idMeal) { dessert in
-                    Text("\(dessert.strMeal)")
-                        .padding()
-                        .font(.headline)
+                    NavigationLink(value: dessert, label: {
+                        Text("\(dessert.strMeal)")
+                            .padding()
+                            .font(.headline)
+                        //AsyncImage(url: URL(string: dessert.strMealThumb))
+                    })
                     
-                    AsyncImage(url: URL(string: dessert.strMealThumb))
                 }
+            }
+            .navigationDestination(for: Dessert.self, destination: { dessert in
+                DessertDetailsViewswift(dessert: dessert)
+            })
+        }
+        .task { await
+            vm.displayDesserts()
+        }
+        .overlay {
+            if let error = vm.errorMessage {
+                Text(error)
             }
         }
     }

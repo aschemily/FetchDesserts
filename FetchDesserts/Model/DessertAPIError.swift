@@ -15,7 +15,7 @@ enum DessertAPIError: Error {
     var customDescription: String {
         switch self {
         case .invalidData:
-            return "Invalid data"
+            return "invalid data"
         case .requestFailed(let description):
             return "request failed \(description)"
         case .unknownError(let error):
