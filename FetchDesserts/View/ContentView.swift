@@ -11,13 +11,14 @@ struct ContentView: View {
     @StateObject var vm = DessertsViewModel()
     var body: some View {
         NavigationStack {
+            Text("Desserts")
+                .font(.largeTitle)
             List {
                 ForEach(vm.desserts, id: \.idMeal) { dessert in
                     NavigationLink(value: dessert, label: {
                         Text("\(dessert.strMeal)")
                             .padding()
                             .font(.headline)
-                        //AsyncImage(url: URL(string: dessert.strMealThumb))
                     })
                     
                 }

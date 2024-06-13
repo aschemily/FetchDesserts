@@ -22,11 +22,11 @@ class DessertDetailsViewModel: ObservableObject {
     }
     
     @MainActor
-    func fetchCoinDetails() async {
+    func displayDessertDetails() async {
+        print("inside display dessert details")
         do {
-           let details = try await service.fetchDessertDetails(id: dessertId)
-            self.dessertDetails = details
-            
+            let details = try await service.fetchDessertDetails(id: dessertId)
+            print("inside DO display dessert details")
             for dessert in details {
                 let mirror = Mirror(reflecting: dessert)
                 for child in mirror.children {
@@ -40,6 +40,7 @@ class DessertDetailsViewModel: ObservableObject {
                     }
                 }
             }
+            self.dessertDetails = details
         } catch {
             if let error = error as? DessertAPIError {
                 self.errorMessage = error.customDescription
@@ -48,5 +49,4 @@ class DessertDetailsViewModel: ObservableObject {
             }
         }
     }
-    
 }

@@ -15,5 +15,4 @@ struct Dessert: Decodable, Equatable, Hashable {
     let idMeal: String
     let strMeal: String
     let strMealThumb: String 
-   
 }

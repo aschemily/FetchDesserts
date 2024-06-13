@@ -27,7 +27,6 @@ struct DessertDetailsViewswift: View {
                             image
                                 .resizable()
                                 .scaledToFit()
-                            //.frame(maxWidth: .infinity, maxHeight: .infinity)
                         }, placeholder: {
                             EmptyView()
                         })
@@ -63,12 +62,12 @@ struct DessertDetailsViewswift: View {
             }
             .padding()
             .task { await
-                vm.fetchCoinDetails()
+                vm.displayDessertDetails()
             }
         }
     }
 }
 
 #Preview {
-    DessertDetailsViewswift(dessert: Dessert(idMeal: "", strMeal: "", strMealThumb: ""))
+    DessertDetailsViewswift(dessert: Dessert(idMeal: "52767", strMeal: "Bakewell tart", strMealThumb: "https://www.themealdb.com/images/media/meals/wyrqqq1468233628.jpg"))
 }

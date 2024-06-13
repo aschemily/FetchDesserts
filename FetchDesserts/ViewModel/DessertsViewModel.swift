@@ -9,14 +9,9 @@ import Foundation
 
 
 class DessertsViewModel: ObservableObject {
+    private let service = DessertDataService()
     @Published var desserts: [Dessert] = []
     @Published var errorMessage: String?
- 
-    private let service = DessertDataService()
-    
-//    init(service: DessertDataService) {
-//        self.service = service 
-//    }
     
     @MainActor
     func displayDesserts() async {
@@ -30,6 +25,4 @@ class DessertsViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }
