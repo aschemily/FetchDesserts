@@ -30,7 +30,6 @@ class DessertDataService {
         let (data, _) = try await URLSession.shared.data(from: url)
         do {
             let details = try JSONDecoder().decode(DessertDetailMeals.self, from: data)
-            print("fetching desserts")
             return details.meals
         } catch {
             throw error as? DessertAPIError ?? .unknownError(error: error)

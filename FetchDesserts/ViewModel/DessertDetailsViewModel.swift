@@ -23,19 +23,19 @@ class DessertDetailsViewModel: ObservableObject {
     
     @MainActor
     func displayDessertDetails() async {
-        print("inside display dessert details")
         do {
             let details = try await service.fetchDessertDetails(id: dessertId)
-            print("inside DO display dessert details")
             for dessert in details {
                 let mirror = Mirror(reflecting: dessert)
                 for child in mirror.children {
                     for i in 1...20 {
-                        if child.label == "strIngredient\(i)", let ingredient = child.value as? String, !ingredient.isEmpty {
-                            ingredients.insert(ingredient)
+                        if child.label == "strIngredient\(i)", let ingredient = child.value as? String, !ingredient.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                            let trimmedIngredient = ingredient.trimmingCharacters(in: .whitespaces)
+                            ingredients.insert(trimmedIngredient)
                         }
-                        if child.label == "strMeasure\(i)", let measurement = child.value as? String, !measurement.isEmpty {
-                            measurements.insert(measurement)
+                        if child.label == "strMeasure\(i)", let measurement = child.value as? String, !measurement.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty{
+                            let trimmedMeasurement = measurement.trimmingCharacters(in: .whitespaces)
+                            measurements.insert(trimmedMeasurement)
                         }
                     }
                 }
